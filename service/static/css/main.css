@@ -1,0 +1,166 @@
+.body
+{
+    margin: 0;
+    background-color: #e5e5e5;
+    font-family: 'Roboto', sans-serif;
+    color: #0f0f0f;
+}
+
+#app
+{
+    margin: 30px 0;
+}
+
+.main-card
+{
+    background-color: #fff;
+    padding: 20px 20px 20px 34px;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1);
+    -moz-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1);
+    box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1);
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.main-card::before
+{
+    content: '';
+    height: 100%;
+    width: 14px;
+    background-color: #75caff;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.main-card.buy::before
+{
+    background-color: #94ff5b;
+}
+
+.main-card.not-buy::before
+{
+    background-color: #ff8772;
+}
+
+.main-card .name
+{
+    font-size: 16px;
+    margin-bottom: 14px;
+    display: block;
+}
+
+.main-card .main-info-container
+{
+    min-height: 44px;
+    position: relative;
+}
+
+.main-card .main-info-container .info-container .label
+{
+    display: block;
+    margin-bottom: 6px;
+    font-size: 15px;
+    color: #3d3d3d;
+}
+
+.main-card .main-info-container .info-container .label:last-child
+{
+    margin: 0;
+}
+
+.main-card .main-info-container .info-container .label .text
+{
+    font-size: 16px;
+    color: #0f0f0f;
+}
+
+.main-card .main-info-container .loading-container
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    right: 0;
+    opacity: 0;
+    transition: opacity .2s linear;
+}
+
+.main-card .main-info-container .loading-container.show
+{
+    opacity: 1;
+    transition: opacity .2s linear;
+}
+
+.main-card .main-info-container .error-container
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.main-card .main-info-container .error-container .error-message
+{
+    font-size: 16px;
+    color: #ff8772;
+}
+
+.spinner {
+    width: 44px;
+    height: 44px;
+  
+    position: relative;
+    margin: 0 auto;
+  }
+  
+  .double-bounce1, .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #75caff;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+  }
+  
+  .double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+  
+  @-webkit-keyframes sk-bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+  }
+  
+  @keyframes sk-bounce {
+    0%, 100% { 
+      transform: scale(0.0);
+      -webkit-transform: scale(0.0);
+    } 50% { 
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+  }
+
+@media screen and (max-width: 767px){
+    #app .container .row .xs-12:last-child .main-card{
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 768px){
+    #app{
+        margin: 40px 0;
+    }
+}

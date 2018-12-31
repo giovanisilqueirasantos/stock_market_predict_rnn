@@ -1,0 +1,21 @@
+version: "3"
+services:
+    stock_price_training:
+        build: .        
+        tty: true  
+        volumes:
+            - ".:/usr/src/app"
+            - "../service/store:/usr/src/app/store"
+        ports:
+          - "8080:6006"
+
+    stock_price_mongo:
+        image: mongo      
+        environment:
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: root
+          MONGO_INITDB_DATABASE: stock_price
+        volumes:
+          - "./data/mongo_data:/data/db"
+        ports:
+          - "27017:27017"
