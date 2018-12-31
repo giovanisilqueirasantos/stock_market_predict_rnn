@@ -14,4 +14,5 @@ How to use:
     if you want to see the logs with TensorBoard, go to training folder
     and run tensorboard --logdir=logs, after that go to localhost:8080 on your browser.
     if you want to serve your models, stop your container of training using docker stop <container-id>
-    go to service, run docker-compose up -d and go to localhost:8080.
+    go to service, run docker-compose up -d, enter on the on the container using docker exec -ti <container-id> /bin/bash,
+    run export FLASK_APP=server.py and flask run --host=0.0.0.0
